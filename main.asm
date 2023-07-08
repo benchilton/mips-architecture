@@ -1,7 +1,11 @@
+#A very random test program which does a multiply-accumulate on 2 vectors, the main purpose of this is to demonstrate different functionality of both
+#The custom assembler and the processor designed.
+
+
 #Data segment
 .data
 
-mystring:       .asciz  "Hello I am a Border Collie called Tazzy, I like playing multi-ball:"
+mystring:       .asciz  "Hello World"
 x:             
                 .word   -20 , 20 , -20 , 20
 c:              
