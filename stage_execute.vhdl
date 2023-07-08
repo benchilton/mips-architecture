@@ -43,7 +43,7 @@ begin
     pc_count <= signed(resize( unsigned(pc) , pc_count'length ));
 
     ---Infers multiplexers for the ALU inputs
-    operand_a <= pc_count  when (pc_or_reg = '1' )  else register_a;
+    operand_a <= pc_count  when (pc_or_reg = '1' ) else register_a;
     operand_b <= immediate when (imm_or_reg = '1') else register_b;
 
 end stage_execute_desc;

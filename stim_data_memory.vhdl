@@ -1,4 +1,4 @@
--- Register testbench
+-- Data memory testbench
 library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
@@ -74,7 +74,7 @@ begin
             write_enable <= rand_logic;
             read_enable  <= rand_logic;
 
-            address    <= std_logic_vector( to_unsigned( rand_signed( 0 , 255) , address'length ) );
+            address    <= std_logic_vector( to_unsigned( rand_signed( 1 , 255) , address'length ) );
             write_data <= std_logic_vector( to_unsigned( rand_signed( 0 , 2**16 ) , write_data'length ) );
 
 

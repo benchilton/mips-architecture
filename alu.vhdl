@@ -24,14 +24,11 @@ entity alu is
 end alu;
 
 architecture alu_desc of alu is
-    signal result : signed(2*data_size-1 downto 0);
+    signal result    : signed(2*data_size-1 downto 0);
+    signal less_than : signed(2*data_size-1 downto 0);
     signal z : std_logic;
     signal n : std_logic;
     signal c : std_logic;
-    signal shamt : integer;
-
-    constant shamt_start_pos : natural := 10;
-    constant shamt_end_pos   : natural := 5;
 
 begin
     process( operand_a, operand_b, alu_func )
@@ -49,7 +46,7 @@ begin
             when ALU_MUL =>
                 result <= operand_a * operand_b;
             when ALU_DIV =>
-                result <= (operand_a / operand_b) & (operand_a mod operand_b);
+                result <= (operand_a mod operand_b) & (operand_a / operand_b);
             when ALU_AND =>
                 result <= signed(resize( signed(operand_a and operand_b) , output_data'length ));
             when ALU_OR =>
@@ -59,23 +56,26 @@ begin
             when ALU_XOR =>
                 result <=signed(resize( signed(operand_a xor operand_b) , output_data'length ));
             when ALU_LSL =>
-                result <= resize( signed( shift_left(  unsigned(operand_a) , shamt ) ) , output_data'length );
+                result <= shift_left( signed( resize(signed(operand_a), output_data'length) ) , to_integer(operand_b) );
             when ALU_RSL =>
-                result <= resize( signed( shift_right( unsigned(operand_a) , shamt ) ) , output_data'length );
+                result <= shift_right( signed( resize(signed(operand_a), output_data'length) ) , to_integer(operand_b) );
             when ALU_LSA =>
-                result <= resize( shift_left( signed(operand_a) , shamt ) , output_data'length );
+                result <= shift_left( resize(signed(operand_a), output_data'length) , to_integer(operand_b) );
             when ALU_RSA =>
-                result <= resize( shift_right( signed(operand_a) , shamt ) , output_data'length );
+                result <= shift_right( resize(signed(operand_a), output_data'length) , to_integer(operand_b) );
+            when ALU_LESS_THAN =>
+                result <= less_than;
         end case;
     end process;
-
-    shamt <= to_integer( unsigned(operand_b( shamt_start_pos-1 downto shamt_end_pos )  ) );
 
     n <= result(data_size-1);
     z <= '1' when result = "0" else '0'; 
     c <=    ( operand_a(data_size - 1) and operand_b(data_size - 1)) or
             ( operand_a(data_size - 1) and (not result(data_size-1) ) ) or 
             ( operand_b(data_size - 1) and (not result(data_size-1) ) );
+
+    less_than <= signed( to_unsigned( 1 , less_than'length) ) when (operand_a < operand_b) else signed( to_unsigned( 0 , less_than'length) );
+
     carry <= c;
     overflow <= not c;
 

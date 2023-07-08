@@ -13,8 +13,8 @@ end testbench_program_counter;
 architecture testbench of testbench_program_counter is
     signal clk          : std_logic := '0';
     signal nreset       : std_logic;  -- std_logic inputs
-    signal address      : unsigned(pc_size downto 0);  -- outputs
-    signal new_address  : unsigned(pc_size downto 0);  -- outputs
+    signal address      : unsigned(pc_size-1 downto 0);  -- outputs
+    signal new_address  : unsigned(pc_size-1 downto 0);  -- outputs
 begin
     clk <= not clk after half_period;
     -- connecting testbench signals with half_adder.vhd

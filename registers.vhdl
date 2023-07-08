@@ -10,6 +10,8 @@ entity registers is
     );
     port (
 
+        clock           : in std_logic;
+
         write_enable    : in  std_logic;
 
         register_A_addr : in  std_logic_vector(address_size-1 downto 0);
@@ -29,25 +31,39 @@ architecture registers_desc of registers is
     constant register_size : natural := 2**address_size;
 
     type memory is array (0 to register_size-1) of std_logic_vector(word_size-1 downto 0);
-    signal memory_bank : memory;
 
     signal addr_a, addr_b , w_addr: integer range 0 to (register_size-1);
 
-begin
+    signal memory_bank : memory;
 
-    process ( write_enable ) is
-    begin
-        if write_enable = '1' then
-            memory_bank( w_addr ) <= std_logic_vector( write_data );       
-        end if ;
-        
-    end process;
+begin
 
     addr_a <= to_integer( unsigned( register_A_addr ) );
     addr_b <= to_integer( unsigned( register_B_addr ) );
     w_addr <= to_integer( unsigned( write_address ) );
 
-    register_A_data <= signed( memory_bank( addr_a ) );
-    register_B_data <= signed( memory_bank( addr_b ) );
+    process ( clock ) is
+    begin
+        if rising_edge(clock) then
+            if write_enable = '1' then
+                memory_bank( w_addr ) <= std_logic_vector( write_data );       
+            end if;
+        end if;
+    end process;
+
+    process (addr_a , addr_b) is
+    begin
+        if addr_a = to_unsigned( 0 , address_size ) then
+            register_A_data <= to_signed( 0 , word_size );
+        else
+            register_A_data <= signed( memory_bank( addr_a ) );
+        end if ;
+    
+        if addr_b = to_unsigned( 0 , address_size ) then
+            register_B_data <= to_signed( 0 , word_size );
+        else
+            register_B_data <= signed( memory_bank( addr_b ) );
+        end if ;
+    end process;
 
 end registers_desc;

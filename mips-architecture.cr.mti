@@ -22,6 +22,20 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling architecture testbench of testbench_registers
 -- Loading entity registers
 
+} {} {}} D:/Education/projects/mips-architecture/stim_program_memory.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stim_program_memory.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Compiling entity testbench_program_memory
+-- Compiling architecture testbench of testbench_program_memory
+-- Loading package std_logic_textio
+-- Loading entity program_memory
+
 } {} {}} D:/Education/projects/mips-architecture/stage_fetch.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stage_fetch.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -33,6 +47,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity stage_fetch
 -- Compiling architecture stage_fetch_desc of stage_fetch
 -- Loading entity program_counter
+-- Loading package std_logic_textio
 -- Loading entity program_memory
 
 } {} {}} D:/Education/projects/mips-architecture/defines.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/defines.vhdl
@@ -46,6 +61,20 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling package body defines
 -- Loading package defines
 
+} {} {}} D:/Education/projects/mips-architecture/stage_decode.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stage_decode.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package defines
+-- Compiling entity stage_decode
+-- Compiling architecture stage_decode_desc of stage_decode
+-- Loading entity registers
+-- Loading entity decoder
+
 } {} {}} D:/Education/projects/mips-architecture/program_counter.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/program_counter.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -54,31 +83,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity program_counter
 -- Compiling architecture pc_desc of program_counter
-
-} {} {}} D:/Education/projects/mips-architecture/stage_decode.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stage_decode.vhdl
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Loading package defines
--- Compiling entity stage_decode
--- Compiling architecture stage_decode_desc of stage_decode
--- Loading entity registers
--- Loading entity decoder
-
-} {} {}} D:/Education/projects/mips-architecture/program_memory.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/program_memory.vhdl
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Compiling entity program_memory
--- Compiling architecture program_memory_desc of program_memory
 
 } {} {}} D:/Education/projects/mips-architecture/registers.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/registers.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -91,7 +95,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity registers
 -- Compiling architecture registers_desc of registers
 
-} {} {}} D:/Education/projects/mips-architecture/stage_memory.vhdl {0 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stage_memory.vhdl
+} {} {}} D:/Education/projects/mips-architecture/program_memory.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/program_memory.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -99,24 +103,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
--- Compiling entity stage_memory
-** Error: D:/Education/projects/mips-architecture/stage_memory.vhdl(9): (vcom-1136) Unknown identifier "ram_size".
-** Error: D:/Education/projects/mips-architecture/stage_memory.vhdl(9): near ":": (vcom-1576) expecting ';' or ')'.
+-- Loading package std_logic_textio
+-- Compiling entity program_memory
+-- Compiling architecture program_memory_desc of program_memory
 
-} {10.0 12.0} {}} D:/Education/projects/mips-architecture/stim_data_memory.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stim_data_memory.vhdl
+} {} {}} D:/Education/projects/mips-architecture/branch_controller.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/branch_controller.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Loading package MATH_REAL
--- Compiling entity testbench_data_memory
--- Compiling architecture testbench of testbench_data_memory
--- Loading entity data_memory
+-- Loading package defines
+-- Compiling entity branch_controller
+-- Compiling architecture branch_controller_desc of branch_controller
 
-} {} {}} D:/Education/projects/mips-architecture/stim_alu.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stim_alu.vhdl
+} {} {}} D:/Education/projects/mips-architecture/stim_decoder.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stim_decoder.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -126,9 +129,35 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Loading package MATH_REAL
 -- Loading package defines
--- Compiling entity testbench_ALU
--- Compiling architecture testbench of testbench_ALU
--- Loading entity alu
+-- Compiling entity testbench_decoder
+-- Compiling architecture testbench of testbench_decoder
+-- Loading entity decoder
+
+} {} {}} D:/Education/projects/mips-architecture/stage_memory.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stage_memory.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity stage_memory
+-- Compiling architecture stage_memory_desc of stage_memory
+-- Loading package std_logic_textio
+-- Loading entity data_memory
+
+} {} {}} D:/Education/projects/mips-architecture/stim_MIPs.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stim_MIPs.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity testbench_MIPs
+-- Compiling architecture testbench of testbench_MIPs
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package defines
+-- Loading entity MIPs
 
 } {} {}} D:/Education/projects/mips-architecture/decoder.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/decoder.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -155,6 +184,34 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling architecture stage_execute_desc of stage_execute
 -- Loading entity alu
 
+} {} {}} D:/Education/projects/mips-architecture/stim_alu.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stim_alu.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package defines
+-- Compiling entity testbench_ALU
+-- Compiling architecture testbench of testbench_ALU
+-- Loading entity alu
+
+} {} {}} D:/Education/projects/mips-architecture/stim_data_memory.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/stim_data_memory.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Compiling entity testbench_data_memory
+-- Compiling architecture testbench of testbench_data_memory
+-- Loading package std_logic_textio
+-- Loading entity data_memory
+
 } {} {}} D:/Education/projects/mips-architecture/MIPs.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/MIPs.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -170,6 +227,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading entity stage_decode
 -- Loading entity stage_execute
 -- Loading entity stage_memory
+-- Loading entity branch_controller
 
 } {} {}} D:/Education/projects/mips-architecture/alu.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/alu.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -183,7 +241,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity alu
 -- Compiling architecture alu_desc of alu
 
-} {} {}} D:/Education/projects/mips-architecture/data_memory.vhdl {0 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/data_memory.vhdl
+} {} {}} D:/Education/projects/mips-architecture/data_memory.vhdl {1 {vcom -work work -2002 -explicit -stats=none D:/Education/projects/mips-architecture/data_memory.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -191,7 +249,8 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
 -- Compiling entity data_memory
-** Error: D:/Education/projects/mips-architecture/data_memory.vhdl(11): near ")": (vcom-1576) expecting FUNCTION or PROCEDURE or IMPURE or PURE.
+-- Compiling architecture data_memory_desc of data_memory
 
-} {10.0 11.0} {}}
+} {} {}}

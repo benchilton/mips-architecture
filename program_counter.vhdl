@@ -9,14 +9,14 @@ entity program_counter is
     port (
         clk         : in std_logic;
         nreset      : in std_logic;
-        new_address : in unsigned(pc_size downto 0);
+        new_address : in unsigned(pc_size-1 downto 0);
 
-        address     : out unsigned(pc_size downto 0)
+        address     : out unsigned(pc_size-1 downto 0)
     );
 end program_counter;
 
 architecture pc_desc of program_counter is
-    signal count : unsigned(pc_size downto 0);
+    signal count : unsigned(pc_size-1 downto 0);
 begin
 --Make the block sensitive to the clk and nreset signals
     process(clk , nreset)

@@ -9,6 +9,7 @@ use work.defines.all;
 
 entity testbench_registers is
     generic (
+        half_period   : time := 100 ns;
         word_size     : natural := 32;
         address_size  : natural := 5
     );
@@ -27,14 +28,18 @@ architecture testbench of testbench_registers is
     signal register_A_data : signed(word_size-1 downto 0);
     signal register_B_data : signed(word_size-1 downto 0);
 
+    signal clock           : std_logic := '0';
+
 begin
+
+    clock <= not clock after half_period;
 
     -- connecting testbench signals with half_adder.vhd
     DUT : entity work.registers
         generic map(word_size => word_size , address_size => address_size) 
         port map   (write_enable => write_enable, register_A_addr => register_A_addr, register_B_addr => register_B_addr,
                     write_address => write_address, write_data => write_data,
-                    register_A_data => register_A_data , register_B_data => register_B_data);
+                    register_A_data => register_A_data , register_B_data => register_B_data , clock => clock);
 
     ---operand subroutine
     process is

@@ -5,8 +5,8 @@ use IEEE.numeric_std.all;
 
 entity stage_memory is
     generic (
-        data_size : natural := 32
-        ram_size  : natural := 256
+        data_size : natural := 32;
+        ram_size  : natural := 1024
     );
     port (
 
@@ -57,16 +57,23 @@ begin
         );
 
     --Extend the PC count considering it unsigned for the extension and then convert to signed for the ALU
-    alu_trunced <= resize( alu_result, data_size-1 );
+    alu_trunced <= resize( alu_result, data_size );
     mem_addr <= std_logic_vector( unsigned(alu_trunced) );
     mem_w_d  <= std_logic_vector( unsigned(mem_write_d) );
 
     ---Two registers for Hi and Lo.
     process (clk) is
+        variable both : std_logic := '0';
     begin
         if rising_edge(clk) then
             if reg_hi_en = '1' then
-                hi_reg <= alu_result(2*data_size - 1 downto data_size);
+
+                if (( reg_hi_en = '1' ) and ( reg_lo_en = '1') ) then
+                    hi_reg <= alu_result( 2*data_size - 1 downto data_size );
+                else
+                    hi_reg <= alu_result( data_size - 1 downto 0 );
+                end if;
+
             end if;
 
             if reg_lo_en = '1' then

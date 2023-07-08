@@ -6,3 +6,4 @@ diagrams/*
 !*.py
 !*.hex
 !*.asm
+!*.json
