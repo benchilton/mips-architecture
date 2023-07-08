@@ -1,7 +1,8 @@
-vsim.wlf
 work/*
 diagrams/*
-!*.*
-*.mpf
-*.cr.mti
+*
 !Makefile
+!*.vhdl
+!*.py
+!*.hex
+!*.asm
