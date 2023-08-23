@@ -1,7 +1,7 @@
 #Data segment
 .data
 
-mystring:       .asciz  "Hello I am a Border Collie called Tazzy, I like playing multi-ball:"
+mystring:       .asciz  "Here is a test string to show they work!!!"
 x:             
                 .word   -20 , 20 , -20 , 20
 c:              
