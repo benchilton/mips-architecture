@@ -1,9 +1,14 @@
 work/*
 diagrams/*
 *
+!assembler/
 !Makefile
 !*.vhdl
+!*.c
+!*.s
+!*.json
 !*.py
 !*.hex
 !*.asm
 !*.json
+test_mips.py
