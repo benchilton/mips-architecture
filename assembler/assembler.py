@@ -1021,10 +1021,13 @@ if __name__ == "__main__":
     if args == None:
         print("Converts MIPs-Style assembly into machine code based on the provided JSON description file")
         print("args:")
-        print("\t--source / -s:\n\t\tFilename of the assembly source file")
-        print("\t--desc   / -d:\n\t\tFilename of the processor description file")
-        print("\t--output / -o:\n\t\tFilename of the output file")
-        print("\t--hdl    / -v:\n\t\tShould the tool produce a VHDL/Verilog file ")
+        print("\t--source / -s:\n\t\t-> Filename of the assembly source file")
+        print("\t--desc   / -d:\n\t\t-> Filename of the processor description file")
+        print("\t--wpath  / -w:\n\t\t-> Global path prepanded to all other arguments")
+        print("\t--memory / -m:\n\t\t-> Filename of the data memory initialisation file")
+        print("\t--output / -o:\n\t\t-> Filename of the output file")
+        print("\t--hdl    / -v:\n\t\t-> Should the tool produce a VHDL/Verilog file ")
+
     else:
         #If wanted we can output to a custom path
 
