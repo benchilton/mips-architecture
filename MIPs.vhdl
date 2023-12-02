@@ -9,11 +9,16 @@ use work.defines.all;
 entity MIPs is
     generic (
         data_size : natural := 32;
-        pc_size   : natural := 10
+        pc_size   : natural := 10;
+        io_size   : natural := 64
     );
     port (
         clk         : in  std_logic;
-        nreset      : in  std_logic
+        nreset      : in  std_logic;
+
+        input_port  : in  std_logic_vector( io_size - 1 downto 0 );
+        output_port : out std_logic_vector( io_size - 1 downto 0 )
+
     );
 end MIPs;
 

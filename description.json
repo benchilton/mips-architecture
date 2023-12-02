@@ -75,7 +75,9 @@
     "LWE"   : "0x10",
     "SW"    : "0x2B",
     "SHW"   : "0x2C",
-    "SB"    : "0x2D"
+    "SB"    : "0x2D",
+    "LDEX"  : "0x2E",
+    "OUT"   : "0x2F"
   },
   "microcode" :
   {
